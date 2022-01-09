@@ -1,6 +1,5 @@
 # IoT-Project - Trick or Treat shooter
 
-![](IOT_image/1.jpg)
 
 ## 1. Overview/Introduction of the project
 
@@ -37,25 +36,25 @@ Engineers are too busy and boring at work, and they need tools and trick-or-trea
 ## Picture Detail
 ---
 
-Webpage
+1) Webpage
 
-Object detection
+![](IOT_image/1.png)
 
-Raspberry pi
- 
-breadboard
- 
-DC moter and L298N 
- 
-Ball shooter
+2) Object detection
+![](IOT_image/2.png)
 
- 
-DC moter for shooting ball
- 
- 
+3) Raspberry pi
+![](IOT_image/3.png)
+
+4) Breadboard
+![](IOT_image/5.png)
+
+5) Ball shooter
+![](IOT_image/5.png)
 
 ## Step2:Assemble your circuit
 ---
+![](IOT_image/9.png)
 
 ## 3.Write code!
 
@@ -63,12 +62,12 @@ DC moter for shooting ball
 ### Each component code
 ---
 ## A. IOT MOTOR
----
+
 ### 1) Server motor
----
+
 
 #### a. Server motor installed at the bottom will keep rotating until the camera detect boss comes
----
+
 import RPi.GPIO as GPIO
 import time
 
@@ -90,7 +89,6 @@ def server_motor():
     GPIO.cleanup()
 
 #### b. When boss comes, then the top server motor will rotate one circle to let the pingpong ball drop down to the ball lane.
----
 
 import RPi.GPIO as GPIO
 import time
@@ -160,7 +158,7 @@ def dc_motor():
 -->  pyttsx3 is a text-to-speech conversion library in Python
 
 #### a. Install pyttsx3
----
+
 $ pip install pyttsx3
 
 ##### b. Speak out the text which user enter on the webpage we designed (get the ‘voice’ value from Redis)
@@ -181,24 +179,25 @@ def text_to_speach():
 
 ## B. Web development using Flask & Redis for database
 ---
+![](IOT_image/10.png)
+![](IOT_image/11.png)
  
 ### a. Install Flask
----
+
 $ pip install Flask
 
 #### design a text area enable user to enter whatever he/she wants the speaker to shout out when boss comes
----
 
 
 #### Install Redis to store the text user enter in the text area 
----
- 
+
+![](IOT_image/12.png) 
 
 ## Connect Flask and Redis
----
+
+![](IOT_image/13.png)
 
 ## Install Redis
-
 
 ### a. Install Redis
 -->  An simple database that only need key and value, it enables us to temporarily store the words entered by the user on the web page and the 
@@ -212,12 +211,15 @@ $ cd redis-6.2.6
 $ make
 $ src/redis-server
  
+![](IOT_image/14.png)
 
 import redis
 r = redis.Redis(host='localhost',port = 6379)
 r.set('voice',speak)  
 
 ## C. Object Detection 
+
+![](IOT_image/15.png)
  
 ### Install TensorFlow Lite and pre-trained object detection model on raspberry pi for us to detect people when they come
 
@@ -260,7 +262,9 @@ $ python TFLite_detection_webcam.py --modeldir=coco_ssd_mobilenet_v1
 
  
 ### Add code to monitor each moment if object detection detect person score>65
----
+ 
+![](IOT_image/16.png
+
 1) get the highest score’s object in the score output array
 2) if the object score>65 then set ‘label’ key’s value this object name 
 3) else set value ‘nono’
