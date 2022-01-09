@@ -14,11 +14,9 @@ Engineers are too busy and boring at work, and they need tools and trick-or-trea
 
 ## 2. Preparation
 
-## Step1: Gather your component
+## Step1.Gather your component
 
----
 ### Hardware Components
----
 
 1.	Raspberry Pi 4 *1
 2.	Pi Camera *1
@@ -34,10 +32,8 @@ Engineers are too busy and boring at work, and they need tools and trick-or-trea
 12.	Temperature Hot Melt Adhesive Gun *1
 
 ## Picture Detail
----
 
 1) Webpage
-
 ![](IOT_image/1.png)
 
 2) Object detection
@@ -53,14 +49,14 @@ Engineers are too busy and boring at work, and they need tools and trick-or-trea
 ![](IOT_image/5.png)
 
 ## Step2:Assemble your circuit
----
+
 ![](IOT_image/9.png)
 
-## 3.Write code!
-
+## 3. Write code!
+---
 
 ### Each component code
----
+
 ## A. IOT MOTOR
 
 ### 1) Server motor
@@ -168,7 +164,9 @@ import pyttsx3
 import redis
 
 r = redis.Redis(host='localhost',port = 6379)
+
 def text_to_speach():
+
     engine = pyttsx3.init()
     engine.setProperty('rate',130)
     text = r.get('voice').decode()
