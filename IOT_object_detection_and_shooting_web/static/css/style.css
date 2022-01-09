@@ -1,0 +1,22 @@
+h1{
+
+    color: blue;
+    text-align: center;
+}
+
+
+h2{
+
+    color: black;
+    text-align: center;
+}
+
+
+.textarea{
+
+    margin: auto;
+    width: 60%;
+    border: 5px solid #FFFF00;
+    padding: 10px;
+}
+

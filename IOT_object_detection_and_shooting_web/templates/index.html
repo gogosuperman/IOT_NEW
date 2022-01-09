@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yoyoyo</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename = 'css/style.css') }}">
+    <script type="text/javascript" src="{{ url_for('static',filename='script/script.js' ) }}"></script>
+
+    <style>
+        body {
+
+            background-color: #97CBFF;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Welcome to Zion's IOT page</h1>
+    <h2>What would you like to shout out?</h2>
+    <div class='textarea'>
+        <form action="/submit" method="post">
+            <p><textarea name="words" id='words' rows="10" cols="50" placeholder='you want to say'></textarea></p>
+            <p><input type='submit' value='submit'></p>
+        </form>
+    </div>
+</body>
+
+</html>
