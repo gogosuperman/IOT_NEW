@@ -202,7 +202,7 @@ $ pip install Flask
 
 ### Install Redis
 
--->  An simple database that only need key and value, it enables us to temporarily store the words entered by the user on the web page and the 
+-->  An simple database that only need key and value, it enables us to temporarily store the words entered by the user on the web page and the result output by object detection
 
 #### 1) Download Redis 
 ```
