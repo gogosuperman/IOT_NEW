@@ -1,5 +1,6 @@
 # IoT-Project - Trick or Treat shooter
 
+![](IOT_image/1.jpg)
 
 ## 1. Overview/Introduction of the project
 
