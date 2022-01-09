@@ -66,7 +66,7 @@ Engineers are too busy and boring at work, and they need tools and trick-or-trea
 
 import RPi.GPIO as GPIO
 import time
-
+```
 def server_motor():
 
     led_pin = 2
@@ -83,12 +83,13 @@ def server_motor():
     time.sleep(1.4)
     
     GPIO.cleanup()
+```
 
 #### b. When boss comes, then the top server motor will rotate one circle to let the pingpong ball drop down to the ball lane.
 
 import RPi.GPIO as GPIO
 import time
-
+```
 def server_motor_buttom(object_name):
 
     led_pin = 22
@@ -106,12 +107,12 @@ def server_motor_buttom(object_name):
         time.sleep(1.4)
         
     GPIO.cleanup()
-
+```
 ### 2) DC motor & L298N driver
 ---
 
 #### L298N Connect the Battery Holder(12V) and raspberry pi to let two DC motor start rotating at the same time.
-
+```
 import RPi.GPIO as GPIO
 from time import sleep
 
@@ -148,18 +149,18 @@ def dc_motor():
     GPIO.output(in4 , GPIO.HIGH)
     sleep(10)
     GPIO.cleanup()
-
+```
 ### 3) Text to Speech 
 ---
 -->  pyttsx3 is a text-to-speech conversion library in Python
 
 #### a. Install pyttsx3
-
+```
 $ pip install pyttsx3
-
+```
 ##### b. Speak out the text which user enter on the webpage we designed (get the ‘voice’ value from Redis)
 ---
-
+```
 import pyttsx3
 import redis
 
@@ -174,16 +175,16 @@ def text_to_speach():
     engine.say(text)
     return engine.runAndWait()
 
-
+```
 ## B. Web development using Flask & Redis for database
 ---
 ![](IOT_image/10.png)
 ![](IOT_image/11.png)
  
 ### a. Install Flask
-
+```
 $ pip install Flask
-
+```
 #### design a text area enable user to enter whatever he/she wants the speaker to shout out when boss comes
 
 
@@ -201,20 +202,25 @@ $ pip install Flask
 -->  An simple database that only need key and value, it enables us to temporarily store the words entered by the user on the web page and the 
 
 #### 1) Download Redis 
+```
 $ wget https://download.redis.io/releases/redis-6.2.6.tar.gz
+```
 #### 2) Decompression and cd Redis
+```
 $ tar xzf redis-6.2.6.tar.gz
 $ cd redis-6.2.6
+```
 #### 3) Install and start server
+```
 $ make
 $ src/redis-server
- 
+ ```
 ![](IOT_image/14.png)
-
+```
 import redis
 r = redis.Redis(host='localhost',port = 6379)
 r.set('voice',speak)  
-
+```
 ## C. Object Detection 
 
 ![](IOT_image/15.png)
@@ -222,42 +228,44 @@ r.set('voice',speak)
 ### Install TensorFlow Lite and pre-trained object detection model on raspberry pi for us to detect people when they come
 
 #### 1) Create a virtual environment
-
+```
 $ mkdir -p Projects/Python/tflite
 $ cd Projects/Python/tflite
 $ python -m pip install virtualenv
 $ python -m venv tflite-env
-
+```
 #### 2) Activate the tflite-env virtual environment
+```
 $ source tflite-env/bin/activate
-
+```
 #### 3) Install libraries
-
+```
 $ sudo apt -y install libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev libavcodec-dev libavformat-dev libswscale-dev libv4l-dev libxvidcore-dev libx264-dev
 $ sudo apt -y install qt4-dev-tools libatlas-base-dev libhdf5-103
-
+```
 #### 4) Install OpenCV
-
+```
 $ python -m pip install opencv-contrib-python==4.1.0.25
-
+```
 #### 5) Install TensorFlow Lite in your virtual environment
+```
 $ python -m pip install <paste in .whl link>
-
+```
 #### 6) Download Pre-Trained Model
- 
+```
 $ Download Starter Model and Labels (we use model trained on trained on the COCO dataset.
 $ mkdir -p ~/Projects/Python/tflite/object_detection/coco_ssd_mobilenet_v1
 $ cd ~/Projects/Python/tflite/object_detection
 $ mv ~/Downloads/coco_ssd_mobilenet_v1_1.0_quant_2018_06_29.zip .
 $ unzip coco_ssd_mobilenet_v1_1.0_quant_2018_06_29.zip -d coco_ssd_mobilenet_v1
-
+```
 #### 7) Activate
- 
+```
 $ cd ~/Projects/Python/tflite
 $ source tflite-env/bin/activate
 $ cd object_detection
 $ python TFLite_detection_webcam.py --modeldir=coco_ssd_mobilenet_v1
-
+```
  
 ### Add code to monitor each moment if object detection detect person score>65
  
