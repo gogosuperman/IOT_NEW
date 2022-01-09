@@ -2,6 +2,9 @@
 
 ![](IOT_image/2.png)
 
+## Take a quick look! B-)
+<https://drive.google.com/file/d/1mWDjErsG3s_R2LuS1L4U52oKzutcNRf5/view?usp=sharing>
+
 ## 1. Overview/Introduction of the project
 
 ### Introduction
@@ -290,3 +293,5 @@ https://blog.csdn.net/wailaizhu/article/details/104479458
 https://www.youtube.com/watch?v=2bganVdLg5Q  
 
 https://redis.io
+
+
