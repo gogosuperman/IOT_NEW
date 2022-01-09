@@ -270,9 +270,9 @@ $ python TFLite_detection_webcam.py --modeldir=coco_ssd_mobilenet_v1
  
 ![](IOT_image/16.png)
 
-1) get the highest score’s object in the score output array
-2) if the object score>65 then set ‘label’ key’s value this object name 
-3) else set value ‘nono’
+1) Get the highest score’s object in the score output array
+2) If the object score>65 then set ‘label’ key’s value this object name 
+3) Else set value ‘nono’
 
 ## 4. Reference Link
 ---
