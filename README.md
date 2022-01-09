@@ -158,7 +158,7 @@ def dc_motor():
 ```
 $ pip install pyttsx3
 ```
-##### b. Speak out the text which user enter on the webpage we designed (get the ‘voice’ value from Redis)
+#### b. Speak out the text which user enter on the webpage we designed (get the ‘voice’ value from Redis)
 ---
 ```
 import pyttsx3
@@ -181,24 +181,23 @@ def text_to_speach():
 ![](IOT_image/10.png)
 ![](IOT_image/11.png)
  
-### a. Install Flask
+### 1. Install Flask
 ```
 $ pip install Flask
 ```
-#### design a text area enable user to enter whatever he/she wants the speaker to shout out when boss comes
+### Design a text area enable user to enter whatever he/she wants the speaker to shout out when boss comes
 
 
-#### Install Redis to store the text user enter in the text area 
+#### 2.Install Redis to store the text user enter in the text area 
 
 ![](IOT_image/12.png) 
 
-## Connect Flask and Redis
+### 3.Connect Flask and Redis
 
 ![](IOT_image/13.png)
 
-## Install Redis
+### Install Redis
 
-### a. Install Redis
 -->  An simple database that only need key and value, it enables us to temporarily store the words entered by the user on the web page and the 
 
 #### 1) Download Redis 
@@ -267,7 +266,7 @@ $ cd object_detection
 $ python TFLite_detection_webcam.py --modeldir=coco_ssd_mobilenet_v1
 ```
  
-### Add code to monitor each moment if object detection detect person score>65
+## Add code to monitor each moment if object detection detect person score>65
  
 ![](IOT_image/16.png
 
@@ -277,10 +276,16 @@ $ python TFLite_detection_webcam.py --modeldir=coco_ssd_mobilenet_v1
 
 ## 4. Reference Link
 ---
-https://www.youtube.com/watch?v=0m387MkOyWw
-https://devs.tw/post/448
-https://www.youtube.com/watch?v=1Ekc6TMeMxU&t=296s
-https://www.youtube.com/watch?v=0l9Pu4dk89c
-https://blog.csdn.net/wailaizhu/article/details/104479458
-https://www.youtube.com/watch?v=2bganVdLg5Q
+https://www.youtube.com/watch?v=0m387MkOyWw  
+
+https://devs.tw/post/448  
+
+https://www.youtube.com/watch?v=1Ekc6TMeMxU&t=296s  
+
+https://www.youtube.com/watch?v=0l9Pu4dk89c  
+
+https://blog.csdn.net/wailaizhu/article/details/104479458  
+
+https://www.youtube.com/watch?v=2bganVdLg5Q  
+
 https://redis.io
