@@ -1,4 +1,4 @@
-# IoT-Project - BOSS SENSOR CHEAT OR TRICK
+# IoT Project - BOSS SENSOR CHEAT OR TRICK
 
 ![](IOT_image/2.png)
 
