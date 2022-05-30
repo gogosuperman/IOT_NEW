@@ -309,7 +309,6 @@ while True:
     time.sleep(1.4)
 print('1')
 text_to_speach.text_to_speach()
-#dc_motor.dc_motor()
 server_motor.server_motor()
 dc_motor.dc_motor()
 
