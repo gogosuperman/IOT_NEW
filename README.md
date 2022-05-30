@@ -57,7 +57,7 @@ Engineers are too busy and boring at work, and they need tools and trick-or-trea
 ![](IOT_image/9.png)
 
 ## 3. Write code!
----
+
 
 ### Each component code
 
@@ -278,6 +278,42 @@ $ python TFLite_detection_webcam.py --modeldir=coco_ssd_mobilenet_v1
 2) If the object score>65 then set ‘label’ key’s value this object name 
 3) Else set value ‘nono’
 
+
+### Main code
+---
+```
+import RPi.GPIO as GPIO
+import time
+import server_motor
+import dc_motor
+import text_to_speach 
+import redis
+
+r = redis.Redis(host='localhost',port = 6379)
+led_pin = 22
+GPIO.setmode(GPIO.BCM)
+
+#let power to bread
+GPIO.setup(led_pin,GPIO.OUT)
+servol = GPIO.PWM(led_pin,50)
+servol.start(0)
+
+print('rotate 360 degrees')
+
+while True:
+    label = 'no' if r.get('label') == None else r.get('label').decode()
+    print(label)
+    if label =='person':
+        break
+    servol.ChangeDutyCycle(3)
+    time.sleep(1.4)
+print('1')
+text_to_speach.text_to_speach()
+#dc_motor.dc_motor()
+server_motor.server_motor()
+dc_motor.dc_motor()
+
+```
 ## 4. Reference Link
 ---
 https://www.youtube.com/watch?v=0m387MkOyWw  
